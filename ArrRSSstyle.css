@@ -1,0 +1,17 @@
+#iconDiv
+{
+	position: fixed;
+	top:0px;
+	left:0px;
+	height: 64px;
+	width: 64px;
+}
+
+#titleBanner
+{
+	position:fixed;
+	top:-25px;
+	left: 80px;
+	width:90%;
+	background-color: rgb(112,128,144);
+}
