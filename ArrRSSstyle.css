@@ -1,17 +1,39 @@
 #iconDiv
 {
-	position: fixed;
+	position: absolute;
 	top:0px;
 	left:0px;
-	height: 64px;
-	width: 64px;
+	height: 15%;
+	width: 15%;
+	background-color: green;
 }
 
 #titleBanner
 {
-	position:fixed;
-	top:-25px;
-	left: 80px;
-	width:90%;
+	position:absolute;
+	top: 0px;
+	left: calc(15% + 15px);
+	width:75%;
+	padding-top:0px;
 	background-color: rgb(112,128,144);
+	line-height:0.95em;
+}
+
+#sidePanel
+{
+	position: absolute;
+	top: calc(15% + 15px);
+	left: 0px;
+	width:145px;
+	height: 60%;
+	background-color: rgb(100,100,100);
+}
+
+#bottomSidePanel
+{
+	position: absolute;
+	top: calc(75% + 30px);
+	background-color: rgb(150,150,150);
+	left:0px;
+	width:145px;
 }
