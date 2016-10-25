@@ -97,3 +97,9 @@
     font-size: 36px;
     height: 50%;
 }
+
+#rssHolder
+{
+    color: blue;
+    display: none;
+}

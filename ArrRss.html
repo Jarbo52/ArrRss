@@ -2,6 +2,8 @@
 <html>
 
 <link rel="stylesheet" type="text/css" href="ArrRSSstyle.css">
+
+<script src="ArrRSSscript.js"></script>
     
 <title> ArrRSS </title>
 
@@ -23,9 +25,11 @@
 	
 	<div id="mainContainer">
         
+        <ul id = "rssHolder"><li>HELLO</li></ul>
+        
         <div class = "rssFeed">
             <div class = "rssTitle">
-                NY Times Tech
+                <p id = 'http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Frss.nytimes.com%2Fservices%2Fxml%2Frss%2Fnyt%2FWorld.xml%22&format=json&diagnostics=true&callback=printRSS' onclick="rssRequest(this)">Yahoo News</p>
             </div>
             
             <div class = "rssDescription">
