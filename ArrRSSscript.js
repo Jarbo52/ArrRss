@@ -1,7 +1,7 @@
 var currentLocation = "";
-var yqls=[];
-var names=[];
-var tags=[];
+var yqls=['a','https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.wsj.com%2Fxml%2Frss%2F3_7085.xml%22&format=json&diagnostics=true&callback=printRSS'];
+var names=['a','Test'];
+var tags=['a','wsj feed'];
 
 function closeFeeds()
 {
@@ -10,7 +10,7 @@ function closeFeeds()
         document.getElementById('rssHolder').style.display="none"; document.getElementById('listHolder').style.display="block";
         document.getElementById('closeButton').style.display="none";
         var rssFeed = document.getElementById('rss');
-        rssFeed.parentNode.removeChild(rssFeed);
+        //rssFeed.parentNode.removeChild(rssFeed);
         
     },500);
     console.log("closing");
@@ -70,22 +70,39 @@ function searchButton()
 
 function searchFeeds()
 {
-    var searchData = document.getElementById('searchData');
+    var searchData = document.getElementById('searchData').value;
+    var sList = document.getElementById('searchedList');
+    console.log(searchData);
+    
     var applicableFeeds = [];
     if(searchData != "")
     {
+        console.log("in if");
+
         for(var i = 0; i < tags.length; i++)
             if(tags[i].includes(searchData))
                 applicableFeeds.push(i); 
         
+        console.log(applicableFeeds[0]);
+        
         for(var i = 0; i < applicableFeeds.length;i++)
         {
-            var searcedFeed = document.createElement('div');
-            searcedFeed.setAttribute('class','rssFeed');
+            var searchedFeed = document.createElement('div');
+            searchedFeed.setAttribute('class','rssFeed');
             var searchedBody = document.createElement('div');
             searchedBody.setAttribute('class','rssTitle');
-            var searchedData 
+            var searchedData = document.createElement('p');
+            searchedData.setAttribute('id',yqls[applicableFeeds[i]]);
+            searchedData.setAttribute('class',tags[applicableFeeds[i]]);
+            searchedData.setAttribute('onclick','rssRequest(this)')
+            searchedData.innerHTML = names[applicableFeeds[i]];
+            searchedBody.appendChild(searchedData);
+            searchedFeed.appendChild(searchedBody);
+            sList.appendChild(searchedFeed);
         }
+        
+        document.getElementById('listHolder').style.display="none";
+        sList.style.display="block";
     }    
     alert("searched");
 }
