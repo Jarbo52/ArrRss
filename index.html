@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<!--Team Members: Jordan Guzman, Connor Murphy, Jacob Fallin, Jared Bass-->
+
+<!--We pledge our honor that we have abided by the Stevens Honor System.-->
+
+<html>
+    
+<head>
+
+    <title> ArrRSS </title>
+    <script src="ArrRSSscript.js"></script>
+    <link rel="stylesheet" type="text/css" href="ArrRssstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+</head>
+
+
+<body>
+
+	<div id="topContainer">
+	
+		<div id = "iconDiv">
+			<a href="index.html"><img src="placeholdericon.jpg" alt="Icon for page"></a>
+		</div>
+
+		<div id = "titlePanel" class = "panel">
+			<h1 id = "mainTitle">ArrRSS</h1>
+			
+            <p>An RSS reader for the pirate in everyone</p>
+		</div>
+		
+	</div>
+	
+	<div id="mainContainer">
+        
+        <ul id = "rssHolder"><li>HELLO</li></ul>
+        
+        <p id='closeButton' onclick="closeFeeds()">&#10006;</p>
+        
+        <div id = "listHolder">
+            <div class = "rssFeed">
+                <div class = "rssTitle">
+                    <p id = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Frss.nytimes.com%2Fservices%2Fxml%2Frss%2Fnyt%2FWorld.xml%22&format=json&diagnostics=true&callback=printRSS' class='nyt feed' onclick="rssRequest(this)">NY Times World News</p>  
+                </div>
+            </div>
+        
+        <div class = "rssFeed">
+            <div class = "rssTitle">
+                <p id = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.wsj.com%2Fxml%2Frss%2F3_7085.xml%22&format=json&diagnostics=true&callback=printRSS' class='wsj feed' onclick="rssRequest(this)">Wall Street Journal World News</p>  
+            </div>
+        </div>
+        
+        <div class = "rssFeed">
+            <div class = "rssTitle">
+                <p id = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%20%3D%20%22http%3A%2F%2Ffeeds.bbci.co.uk%2Fnews%2Frss.xml%3Fedition%3Duk%22&format=json&diagnostics=true&callback=printRSS' class='bbc feed' onclick="rssRequest(this)">BBC World News</p>  
+            </div>
+        </div>
+            
+        <div class = "rssFeed">
+            <div class = "rssTitle">
+                <p id = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.apple.com%2Fpr%2Ffeeds%2Fpr.rss%22&format=json&diagnostics=true&callback=printRSS' class='apple feed' onclick="rssRequest(this)">Apple News</p>  
+            </div>
+        </div>
+        </div>
+        
+        <div id = "searchHolder">
+            <form onSubmit="return searchFeeds()">
+                <p id="searchText">Search:</p>
+                <input id = "searchData" type="text">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+        
+        <div id = "searchedList">
+        
+        </div>
+	</div>
+	
+	<div id = "sideContainer">
+	
+		<div id = "sidePanel" class = "panel">
+			
+			<div class="savedFeed">
+				Saved Feed 1
+			</div>
+		
+			<div class="savedFeed">
+				Saved Feed 2
+			</div>
+			
+			<div class="savedFeed">
+				Saved Feed 3
+			</div>
+			
+			<!--<p>Panel where all of the saved RSS feeds will go</p>-->
+		</div>
+
+		<div id="bottomSidePanel" class = "panel">
+			<div class = "button">
+				<p onclick=searchButton()>Search</p>
+			</div>
+			<div class = "button">
+				<p>Settings</p>
+			</div>
+			<div class = "button">
+				<a href="about.html">About</a>
+			</div>
+			<!--<p>This is where the four(?) buttons on the bottom will go.-->
+		</div>
+		
+	</div>
+</body>
+
+</html>

@@ -69,9 +69,8 @@
 {
 	border: 1px solid #00f;
 	background-color: lime;
-	line-height:0em;
 	width: 100%;
-	height: 25%;
+	height: 33%;
 }
 
 .savedFeed
@@ -87,19 +86,38 @@
 {
     border: 3px solid black;
     border-radius: 3px;
-    height: calc(25% - 5px);
-    background-color:antiquewhite;
+    height: calc(25% + 5px);
+    background-color:aqua;
 }
 
 .rssTitle
 {
     font-family: sans-serif;
     font-size: 36px;
-    height: 50%;
+    height: 100%;
+}
+
+.feed
+{
+    cursor: pointer;
 }
 
 #rssHolder
 {
     color: blue;
+    display: none;
+}
+
+#closeButton
+{
+    border: 5px solid gray;
+    border-radius: 25px;
+    display:none;
+    background-color: cornflowerblue;
+    cursor: pointer;
+}
+
+#searchHolder
+{
     display: none;
 }
