@@ -5,110 +5,225 @@
 <!--We pledge our honor that we have abided by the Stevens Honor System.-->
 
 <html>
-    
-<head>
 
-    <title> ArrRSS </title>
-    <script src="ArrRSSscript.js"></script>
-    <link rel="stylesheet" type="text/css" href="ArrRssstyle.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+<head>
+	<title> ArrRSS </title>
+	<link rel="stylesheet" type="text/css" href="ArrRssstyle.css">
+	<script src="ArrRSSscript.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-
 <body>
-
-	<div id="topContainer">
 	
-		<div id = "iconDiv">
+	<div id="topContainer">
+
+		<div id="iconDiv">
 			<a href="index.html"><img src="placeholdericon.jpg" alt="Icon for page"></a>
 		</div>
 
-		<div id = "titlePanel" class = "panel">
-			<h1 id = "mainTitle">ArrRSS</h1>
-			
-            <p>An RSS reader for the pirate in everyone</p>
+		<div id="titlePanel" class="panel">
+			<h1 id="mainTitle">ArrRSS</h1>
+
+			<p>An RSS reader for the pirate in everyone</p>
 		</div>
-		
+
 	</div>
-	
+
 	<div id="mainContainer">
-        
-        <ul id = "rssHolder"><li>HELLO</li></ul>
-        
-        <p id='closeButton' onclick="closeFeeds()">&#10006;</p>
-        
-        <div id = "listHolder">
-            <div class = "rssFeed">
-                <div class = "rssTitle">
-                    <p id = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Frss.nytimes.com%2Fservices%2Fxml%2Frss%2Fnyt%2FWorld.xml%22&format=json&diagnostics=true&callback=printRSS' class='nyt feed' onclick="rssRequest(this)">NY Times World News</p>  
-                </div>
-            </div>
-        
-        <div class = "rssFeed">
-            <div class = "rssTitle">
-                <p id = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.wsj.com%2Fxml%2Frss%2F3_7085.xml%22&format=json&diagnostics=true&callback=printRSS' class='wsj feed' onclick="rssRequest(this)">Wall Street Journal World News</p>  
-            </div>
-        </div>
-        
-        <div class = "rssFeed">
-            <div class = "rssTitle">
-                <p id = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%20%3D%20%22http%3A%2F%2Ffeeds.bbci.co.uk%2Fnews%2Frss.xml%3Fedition%3Duk%22&format=json&diagnostics=true&callback=printRSS' class='bbc feed' onclick="rssRequest(this)">BBC World News</p>  
-            </div>
-        </div>
-            
-        <div class = "rssFeed">
-            <div class = "rssTitle">
-                <p id = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.apple.com%2Fpr%2Ffeeds%2Fpr.rss%22&format=json&diagnostics=true&callback=printRSS' class='apple feed' onclick="rssRequest(this)">Apple News</p>  
-            </div>
-        </div>
-        </div>
-        
-        <div id = "searchHolder">
-            <form onsubmit="searchFeeds(); return false;">
-                <p id="searchText">Search:</p>
-                <input id = "searchData" type="text">
-                <input type="submit" value="Search">
-            </form>
-        </div>
-        
-        <div id = "searchedList">
-        
-        </div>
+
+		<ul id="rssHolder">
+			<li>HELLO</li>
+		</ul>
+
+		<p id='closeButton' onclick="closeFeeds()">&#10006;</p>
+
+		<div id="listHolder">
+			<div class="rssFeed">
+				<div class="rssTitle">
+					<p id='https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Frss.nytimes.com%2Fservices%2Fxml%2Frss%2Fnyt%2FWorld.xml%22&format=json&diagnostics=true&callback=printRSS' class='nyt feed' onclick="rssRequest(this)">NY Times World News</p>
+				</div>
+			</div>
+
+			<div class="rssFeed">
+				<div class="rssTitle">
+					<p id='https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.wsj.com%2Fxml%2Frss%2F3_7085.xml%22&format=json&diagnostics=true&callback=printRSS' class='wsj world feed' onclick="rssRequest(this)">Wall Street Journal World News</p>
+				</div>
+			</div>
+
+			<div class="rssFeed">
+				<div class="rssTitle">
+					<p id='https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%20%3D%20%22http%3A%2F%2Ffeeds.bbci.co.uk%2Fnews%2Frss.xml%3Fedition%3Duk%22&format=json&diagnostics=true&callback=printRSS' class='bbc world feed' onclick="rssRequest(this)">BBC World News</p>
+				</div>
+			</div>
+
+			<div class="rssFeed">
+				<div class="rssTitle">
+					<p id='https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.apple.com%2Fpr%2Ffeeds%2Fpr.rss%22&format=json&diagnostics=true&callback=printRSS' class='apple feed' onclick="rssRequest(this)">Apple News</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="searchHolder">
+			<form onsubmit="searchFeeds(''); return false;">
+				<p id="searchText">Search:</p>
+				<input id="searchData" type="text">
+				<input type="submit" value="Search">
+			</form>
+		</div>
+
+		<div id="searchedList">
+			<div class="rssFeed">
+				<div class="rssTitle">
+					<p id='https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Frss.nytimes.com%2Fservices%2Fxml%2Frss%2Fnyt%2FWorld.xml%22&format=json&diagnostics=true&callback=printRSS' class='nyt feed' onclick="rssRequest(this)">NY Times World News</p>
+				</div>
+			</div>
+
+			<div class="rssFeed">
+				<div class="rssTitle">
+					<p id='https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.wsj.com%2Fxml%2Frss%2F3_7085.xml%22&format=json&diagnostics=true&callback=printRSS' class='wsj world feed' onclick="rssRequest(this)">Wall Street Journal World News</p>
+				</div>
+			</div>
+
+			<div class="rssFeed">
+				<div class="rssTitle">
+					<p id='https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%20%3D%20%22http%3A%2F%2Ffeeds.bbci.co.uk%2Fnews%2Frss.xml%3Fedition%3Duk%22&format=json&diagnostics=true&callback=printRSS' class='bbc world feed' onclick="rssRequest(this)">BBC World News</p>
+				</div>
+			</div>
+
+			<div class="rssFeed">
+				<div class="rssTitle">
+					<p id='https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.apple.com%2Fpr%2Ffeeds%2Fpr.rss%22&format=json&diagnostics=true&callback=printRSS' class='apple feed' onclick="rssRequest(this)">Apple News</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="aboutHolder">
+			<div id="rssAbout">
+				<div class="aboutItem">
+					<div class="about">
+						<h3>Jared Bass</h3>
+						<div class="itemImg">
+							<img id="icon" src="placeholdericon.jpg" alt="Placeholder">
+							<p id="aboutTitle">Main RSS details, Search function</p>
+							<br>
+						</div>
+					</div>
+				</div>
+
+				<div class="aboutItem">
+					<div class="about">
+						<h3>Jacob Fallin</h3>
+						<div class="itemImg">
+							<img id="icon" src="placeholdericon.jpg">
+							<p id="aboutTitle">About Page and Add Feed Popup</p>
+							<br>
+						</div>
+					</div>
+				</div>
+
+				<div class="aboutItem">
+					<div class="about">
+						<h3>Jordan Guzman</h3>
+						<div class="itemImg">
+							<img id="icon" src="placeholdericon.jpg">
+							<p id="aboutTitle">Deciding on groups</p>
+							<br>
+						</div>
+					</div>
+				</div>
+
+				<div class="aboutItem">
+					<div class="about">
+						<h3>Connor Murphy</h3>
+						<div class="itemImg">
+							<img id="icon" src="placeholdericon.jpg">
+							<p id="aboutTitle">RSS Query Gathering</p>
+							<br>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
 	</div>
-	
-	<div id = "sideContainer">
-	
-		<div id = "sidePanel" class = "panel">
-			
+
+	<div id="sideContainer">
+
+		<div id="sidePanel" class="panel">
+
 			<div class="savedFeed">
-				Saved Feed 1
+				<p class="groupSearch" onclick="searchFeeds('wsj')">Wall Street Journal Feeds</p>
 			</div>
-		
+
 			<div class="savedFeed">
-				Saved Feed 2
+				<p class="groupSearch" onclick="searchFeeds('world')">World News</p>
 			</div>
-			
+
 			<div class="savedFeed">
-				Saved Feed 3
+				<p class="groupSearch" onclick="searchFeeds('tech')">Technology Feeds</p>
 			</div>
-			
+
+			<div class="savedFeed">
+				<p class="groupSearch" onclick="searchFeeds('money')">Finance Feeds</p>
+			</div>
+
 			<!--<p>Panel where all of the saved RSS feeds will go</p>-->
 		</div>
 
-		<div id="bottomSidePanel" class = "panel">
-			<div class = "button">
+		<div id="bottomSidePanel" class="panel">
+			
+			<div class="button">
 				<p onclick=searchButton()>Search</p>
 			</div>
-			<div class = "button">
-				<p>Settings</p>
+			
+			<div class="button">
+				<a id="addFeedButton" class="button" href="#popup1">Add Feed</a>
 			</div>
-			<div class = "button">
-				<a href="about.html">About</a>
+			
+			<div class="button">
+				<p onclick=displayAbout()>About</a>
 			</div>
-			<!--<p>This is where the four(?) buttons on the bottom will go.-->
+
+			<div id="popup1" class="overlay">
+				
+				<div class="popup">
+					
+					<p>Add a Feed</p>
+					<a class="close" href="#">&times;</a>
+
+					<div class="addFeed">
+						<form id="call">
+							<p>TEMPORARY: Please click the X to close the box</p>
+							<input id="newFeedName" type="text" name="feedName" placeholder="Name">
+							<input id="newFeedURL" type="url" name="feedUrl" placeholder="URL">
+							<select name="category" form="feedCategory" id="newFeedTag">
+								<option value="none">No Category</option>
+								<option value="news">News</option>
+								<option value="ent">Entertainment</option>
+								<option value="tech">Technology</option>
+								<option value="music">Music</option>
+								<option value="sports">Sports</option>
+							</select>
+							Display on add?
+							<br>
+							<input id="loa" type="radio" name="launch" value="yes">Yes
+							<input type="radio" name="launch" value="no" checked>No
+							<br>
+							<br>
+							<input type="button" value="Add" onclick="addFeed()" />
+
+						</form>
+					</div>
+
+				</div>
+				
+			</div>
 		</div>
-		
+	
 	</div>
+		
 </body>
 
 </html>
