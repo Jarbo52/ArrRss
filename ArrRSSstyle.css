@@ -22,6 +22,7 @@ We pledge our honor that we have abided by the Stevens Honor System.
 	height:calc(85% - 6px);
 	background-color:rgb(125,150,175);
 	border: 3px dotted gray;
+	overflow: hidden;
 }
 
 #iconDiv
@@ -80,6 +81,7 @@ We pledge our honor that we have abided by the Stevens Honor System.
 	background-color: lime;
 	width: 100%;
 	height: 33%;
+	cursor: pointer;
 }
 
 .savedFeed
@@ -159,6 +161,7 @@ We pledge our honor that we have abided by the Stevens Honor System.
 #searchedList
 {
 	overflow-y: scroll;
+	max-height: 100%;
 }
 
 .overlay
@@ -274,9 +277,109 @@ We pledge our honor that we have abided by the Stevens Honor System.
 .groupSearch
 {
 	font-size: 24px;
+	cursor: pointer;
 }
 
-.savedFeed
+#savedFeedList
 {
-	cursor: pointer;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+@media screen and (max-width:480px) and (min-width:375px)
+{
+	#topContainer
+	{
+		display: none;
+	}
+	
+	#mainContainer
+	{
+		position: absolute;
+		top:10%;
+		left: 0px;
+		height: 90%;
+		width:100%;
+	}
+	
+	#sidePanel
+	{
+		position: absolute;
+		top:0px;
+		left:0px;
+		width:100%;
+		height:10%;
+		max-height:10%.
+		overflow-x: auto;
+	}
+	
+	.savedFeed
+	{
+		width: auto;
+		max-height: 10%;
+		height: auto;
+		float: left;
+		display: inline;
+		padding: 0;
+		margin: 0;
+	}
+	
+	.groupSearch
+	{
+		font-size: 12px;
+	}
+	
+	#bottomSidePanel
+	{
+		display: none;
+	}
+}
+@media screen and (max-width:375px)
+{
+	#topContainer
+	{
+		display: none;
+	}
+	
+	#mainContainer
+	{
+		position: absolute;
+		top:10%;
+		left: 0px;
+		height: 90%;
+		width:100%;
+	}
+	
+	#sidePanel
+	{
+		position: absolute;
+		top:0px;
+		left:0px;
+		width:100%;
+		height:10%;
+		max-height:10%.
+		overflow-x: auto;
+	}
+	
+	.savedFeed
+	{
+		width: auto;
+		max-height: 10%;
+		height: auto;
+		float: left;
+		display: inline;
+		padding: 0;
+		margin: 0;
+	}
+	
+	.groupSearch
+	{
+		font-size: 11px;
+	}
+	
+	#bottomSidePanel
+	{
+		display: none;
+	}
 }

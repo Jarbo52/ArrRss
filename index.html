@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title> ArrRSS </title>
+	<title>ArrRSS</title>
 	<link rel="stylesheet" type="text/css" href="ArrRssstyle.css">
 	<script src="ArrRSSscript.js"></script>
 	<meta charset="UTF-8">
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-	
+
 	<div id="topContainer">
 
 		<div id="iconDiv">
@@ -152,50 +152,58 @@
 	<div id="sideContainer">
 
 		<div id="sidePanel" class="panel">
-
-			<div class="savedFeed">
-				<p class="groupSearch" onclick="searchFeeds('wsj')">Wall Street Journal Feeds</p>
-			</div>
-
-			<div class="savedFeed">
-				<p class="groupSearch" onclick="searchFeeds('world')">World News</p>
-			</div>
-
-			<div class="savedFeed">
-				<p class="groupSearch" onclick="searchFeeds('tech')">Technology Feeds</p>
-			</div>
-
-			<div class="savedFeed">
-				<p class="groupSearch" onclick="searchFeeds('money')">Finance Feeds</p>
-			</div>
-
-			<!--<p>Panel where all of the saved RSS feeds will go</p>-->
+			
+			<ul id="savedFeedList">
+				<li>
+					<div class="savedFeed">
+						<p class="groupSearch" onclick="searchFeeds('wsj')">Wall Street Journal Feeds</p>
+					</div>
+				</li>
+				
+				<li>
+					<div class="savedFeed">
+						<p class="groupSearch" onclick="searchFeeds('world')">World News</p>
+					</div>
+				</li>
+				
+				<li>
+					<div class="savedFeed">
+						<p class="groupSearch" onclick="searchFeeds('tech')">Technology Feeds</p>
+					</div>
+				</li>	
+				
+				<li>
+					<div class="savedFeed">
+						<p class="groupSearch" onclick="searchFeeds('money')">Finance Feeds</p>
+					</div>
+				</li>
+			</ul>
+			
 		</div>
 
 		<div id="bottomSidePanel" class="panel">
-			
+
 			<div class="button">
 				<p onclick=searchButton()>Search</p>
 			</div>
-			
+
 			<div class="button">
-				<a id="addFeedButton" class="button" href="#popup1">Add Feed</a>
+				<p><a id="addFeedButton" class="button" href="#popup1">Add Feed</a></p>
 			</div>
-			
+
 			<div class="button">
 				<p onclick=displayAbout()>About</a>
 			</div>
 
 			<div id="popup1" class="overlay">
-				
+
 				<div class="popup">
-					
+
 					<p>Add a Feed</p>
 					<a class="close" href="#">&times;</a>
 
 					<div class="addFeed">
 						<form id="call">
-							<p>TEMPORARY: Please click the X to close the box</p>
 							<input id="newFeedName" type="text" name="feedName" placeholder="Name">
 							<input id="newFeedURL" type="url" name="feedUrl" placeholder="URL">
 							<select name="category" form="feedCategory" id="newFeedTag">
@@ -218,12 +226,12 @@
 					</div>
 
 				</div>
-				
+
 			</div>
 		</div>
-	
+
 	</div>
-		
+
 </body>
 
 </html>

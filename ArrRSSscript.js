@@ -67,20 +67,14 @@ function aboutButton() {
 }
 
 function addFeed() {
-	console.log("adding");
 	window.location.hash = "";
 	var feedTag = document.getElementById('newFeedTag').value;
-	console.log(feedTag);
 	var feedName = document.getElementById('newFeedName').value;
-	console.log(feedName);
 	var feedURL = document.getElementById('newFeedURL').value;
-	console.log(feedURL);
 
 	var feedURLv2 = feedURL.replace(":", "%3A");
-	var feedURLv3 = feedURLv2.replace("/", "%3A");
+	var feedURLv3 = feedURLv2.replace("/", "%2F");
 	var yqlURL = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22' + feedURLv3 + '%22&format=json&diagnostics=true&callback=printRSS';
-
-	console.log(yqlURL);
 
 	var feedTag = feedTag + " feed";
 
@@ -110,6 +104,8 @@ function addFeed() {
 		document.getElementById("aboutHolder").style.display = "none";
 		document.getElementById('searchedList').style.display = "block";
 	}
+	
+	document.getElementById('call').reset();
 }
 
 function searchFeeds(sData) {
@@ -125,17 +121,12 @@ function searchFeeds(sData) {
 	document.getElementById('searchedList').innerHTML = "";
 	var sList = document.getElementById('searchedList');
 
-	console.log(searchData);
-
 	var applicableFeeds = [];
 	if (searchData != "") {
-		console.log("in if");
 
 		for (var i = 0; i < tags.length; i++)
 			if (tags[i].includes(searchData))
 				applicableFeeds.push(i);
-
-		console.log(applicableFeeds[0]);
 
 		for (var i = 0; i < applicableFeeds.length; i++) {
 			var searchedFeed = document.createElement('div');
