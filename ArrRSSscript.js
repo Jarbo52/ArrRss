@@ -58,12 +58,14 @@ function searchButton() {
 	document.getElementById("searchHolder").style.display = "block";
 	document.getElementById("searchedList").style.display = "none";
 	document.getElementById("aboutHolder").style.display = "none";
+	document.getElementById('closeButton').style.display="none";
 }
 
 function aboutButton() {
 	document.getElementById('aboutHolder').style.display = "block";
 	document.getElementById('searchHolder').style.display = "none";
 	document.getElementById('listHolder').style.display = "none";
+	document.getElementById('closeButton').style.display="none";
 }
 
 function addFeed() {
@@ -143,6 +145,7 @@ function searchFeeds(sData) {
 			sList.appendChild(searchedFeed);
 		}
 
+		document.getElementById('closeButton').style.display="none";
 		document.getElementById('listHolder').style.display = "none";
 		document.getElementById("rssHolder").style.display = "none";
 		document.getElementById("listHolder").style.display = "none";
@@ -158,4 +161,5 @@ function displayAbout() {
 	document.getElementById("searchHolder").style.display = "none";
 	document.getElementById("searchedList").style.display = "none";
 	document.getElementById("aboutHolder").style.display = "block";
+	document.getElementById('closeButton').style.display="none";
 }

@@ -5,6 +5,25 @@ Team Members: Jordan Guzman, Connor Murphy, Jacob Fallin, Jared Bass
 We pledge our honor that we have abided by the Stevens Honor System.
 
 */
+x
+
+img
+{
+	position: relative;
+	left: 50%;
+}
+
+body
+{
+   font-size: 1em;
+   font-family: 'Open Sans Condensed', sans-serif;
+   background: #E3F2FD;
+}
+
+a:visited 
+{
+	color: black;
+}
 
 #topContainer
 {
@@ -20,7 +39,7 @@ We pledge our honor that we have abided by the Stevens Honor System.
 	left:calc(15% + 10px);
 	width:calc(85% - 16px);
 	height:calc(85% - 6px);
-	background-color:rgb(125,150,175);
+	background-color:#E3F2FD;
 	border: 3px dotted gray;
 	overflow: hidden;
 }
@@ -32,8 +51,7 @@ We pledge our honor that we have abided by the Stevens Honor System.
 	left:0px;
 	height:15%;
 	width:calc(15% + 10px);
-	background-color: gray;
-  float: right;
+  	float: right;
 }
 
 #titlePanel
@@ -55,7 +73,14 @@ We pledge our honor that we have abided by the Stevens Honor System.
 	width:15%;
 	height: 60%;
 	overflow-y:scroll;
+	background: #E3F2FD;
 }
+
+#sideContainer
+{
+	background: #E3F2FD;
+}
+
 
 #bottomSidePanel
 {
@@ -69,7 +94,7 @@ We pledge our honor that we have abided by the Stevens Honor System.
 
 .panel
 {
-	background-color: rgb(112,128,144);
+	background-color: #2196F3;
 	border-style:groove;
 	border-width:5px;
 	border-color:rgb(100,145,123);
@@ -78,7 +103,7 @@ We pledge our honor that we have abided by the Stevens Honor System.
 .button
 {
 	border: 1px solid #00f;
-	background-color: lime;
+	background: #2196F3;
 	width: 100%;
 	height: 33%;
 	cursor: pointer;
@@ -86,8 +111,8 @@ We pledge our honor that we have abided by the Stevens Honor System.
 
 .savedFeed
 {
-	border: 1px solid #0f0;
-	background-color: lightblue;
+	border: 1px solid black;
+	background: #E3F2FD;
 	width:99%;
 	height:40%;
 	margin-bottom:2px;
@@ -98,16 +123,18 @@ We pledge our honor that we have abided by the Stevens Honor System.
     border: 3px solid black;
     border-radius: 3px;
     height: calc(20% + 5px);
-    background-color:aqua;
+    background-color: #BBDEFB;
+	margin-top: 2px;
+	margin-bottom: 2px;
 }
 
 .about
 {
     text-indent: 20px;
-    border: 3px solid red;
+    border: 3px solid black;
     border-radius: 3px;
     height: 25%;
-    background-color:aquamarine;
+	margin-bottom: 4px;
 }
 
 .rssTitle
@@ -124,7 +151,6 @@ We pledge our honor that we have abided by the Stevens Honor System.
 
 #rssHolder
 {
-    color: blue;
     display: none;
 }
 
@@ -133,7 +159,6 @@ We pledge our honor that we have abided by the Stevens Honor System.
     border: 5px solid gray;
     border-radius: 25px;
     display:none;
-    background-color: cornflowerblue;
     cursor: pointer;
 }
 
@@ -259,6 +284,7 @@ We pledge our honor that we have abided by the Stevens Honor System.
     background-color: #2CBBBB;
     border: 1px solid #27A0A0;
     display: inline-block;
+	background-color: #2196F3;
     cursor: pointer;
     color: #FFFFFF;
     font-family: 'Open Sans Condensed', sans-serif;
